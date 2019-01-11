@@ -1,7 +1,19 @@
 var http = require('http');
 
-http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain" });
-  response.write('Hello World');
+// http.createServer(function(request, response) {
+//   response.writeHead(200, {"Content-Type": "text/plain" });
+//   response.write('Hello World');
+//   response.end();
+// }).listen(8888);
+
+//alternatively, it could have been written like:
+// var server = http.createServer();
+// server.listen(8888);
+
+function onRequest(request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.write("Hello World");
   response.end();
-}).listen(8888);
+}
+
+http.createServer(onRequest).listen(8888);
