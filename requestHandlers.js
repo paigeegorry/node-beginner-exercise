@@ -1,5 +1,5 @@
 function start() {
-  console.log('Request handler "start" was called');
+  console.log('Request handle "start" was called');
   return 'Hello Start';
 }
 
